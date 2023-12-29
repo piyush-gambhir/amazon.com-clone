@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Amazon.com",
   description:
     "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more",
 };
+
+import Footer from "@components/footer";
+import Header from "@components/header/header";
 
 export default function RootLayout({
   children,
@@ -17,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="flex flex-col bg-[#e3e6e6]">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
